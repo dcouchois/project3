@@ -20,6 +20,9 @@ export default function () {
                         <span className="member-name">
                             {user.email}
                         </span>
+                        <div>
+                            start editing
+                        </div>
                     </h2>
                 </Col>
             </Row>
