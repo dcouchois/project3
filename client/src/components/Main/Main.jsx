@@ -13,8 +13,7 @@ import {
     Login,
     Signup,
     Home,
-    CandleList,
-    CandleCreate
+    Beat,
 } from "../../pages";
 
 function Main() {
@@ -33,7 +32,6 @@ function Main() {
                     <Switch>
                         <LoggedInRoute exact path="/" component={Home} />
                         <LoggedInRoute exact path="/candle" component={CandleList} />
-                        <LoggedInRoute exact path="/candle/create" component={CandleCreate} />
                         <LoggedOutRoute exact path="/login" component={Login} />
                         <LoggedOutRoute exact path="/signup" component={Signup} />
                         <Route path="*" component={NotFound} />

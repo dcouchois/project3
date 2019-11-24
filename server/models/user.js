@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const CandleSchema = require("./schema/candle");
+const BeatsSchema = require("./schema/beats");
 // Requiring bcrypt for password hashing. Using the bcryptjs version as the regular bcrypt module sometimes causes errors on Windows machines
 var bcrypt = require("bcryptjs");
 
@@ -16,9 +16,9 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  candles: [
+  beats: [
     {
-      type: CandleSchema,
+      type: BeatsSchema,
     }
   ]
 });
