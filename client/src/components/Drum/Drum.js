@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./style.css";
 
 export class DrumMachine extends Component {
         constructor(props){
@@ -8,15 +9,16 @@ export class DrumMachine extends Component {
     handleClick = () => {
         this.audio.play()
         this.audio.currentTime = 0
+        this.props.handleDisplay(this.props.id)
     }
 
     render() {
         return (
-            <div classname="drum-machine"
+            <div className="drum-machine"
                 id={this.props.id}
                 onClick={this.handleClick}
             >
-                <p>{this.props.letter}</p>
+                <h4>{this.props.letter}</h4>
                 <audio
                 ref={ref => this.audio = ref}
                 className="clip"

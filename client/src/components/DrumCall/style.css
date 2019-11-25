@@ -1,0 +1,17 @@
+#drum-roll {
+    height: 75vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.drum-machine {
+    border: 1px solid black;
+    height: 15vh;
+    width: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1vw;
+}

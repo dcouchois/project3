@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import User from '../../utils/Stores/User';
 import Beat from '../../utils/Stores/Beat';
-import DrumCall from "../../components/DrumCall";
+import DrumCall from "../../components/DrumCall/DrumCall";
 
 export default function () {
     User.refreshOnLoad();
