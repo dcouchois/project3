@@ -6,7 +6,6 @@ import Routes from './routes';
 import {
   Navbar
 } from "./components";
-import DrumCall from "./components/DrumCall";
 
 class App extends Component {
   render() {
@@ -16,7 +15,6 @@ class App extends Component {
         <Navbar />
         <Routes />
       </User.Provider>
-      <DrumCall/>
     </BrowserRouter>
   );
 }
