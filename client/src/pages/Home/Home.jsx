@@ -7,7 +7,7 @@ import Beat from '../../utils/Stores/Beat';
 
 export default function () {
     User.refreshOnLoad();
-    // we eagerly load candles here so when the user switches pages it will appear faster. 
+    // we eagerly load beats here so when the user switches pages it will appear faster. 
     Beat.refreshOnLoad();
     const [{user}] = User.useContext();
 
@@ -21,9 +21,7 @@ export default function () {
                             {user.email}
                         </span>
                         <div>
-                            <br>
-                            Drum Machine goes here...
-                            </br>
+                            start editing
                         </div>
                     </h2>
                 </Col>
