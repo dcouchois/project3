@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import User from '../../utils/Stores/User';
 import Beat from '../../utils/Stores/Beat';
 import DrumCall from "../../components/DrumCall/DrumCall";
+import "./Home.css";
 
 export default function () {
     User.refreshOnLoad();
@@ -21,10 +22,10 @@ export default function () {
                         <span className="member-name">
                             {user.email}
                         </span>
-                        <DrumCall/>
                     </h2>
                 </Col>
             </Row>
+            <DrumCall/>
         </Container>
     );
 }
