@@ -29,7 +29,6 @@ export class DrumCall extends Component {
     render() {
         return (
             <div id="drum-machine">
-                <div id="display">{this.state.display}</div>
                 <div id="drum-roll">
                     {data.map(d => (
                         <DrumMachine
@@ -40,6 +39,7 @@ export class DrumCall extends Component {
                         />
                     ))}
                 </div>
+                <div id="display">{this.state.display}</div>
             </div>
         )
     }
