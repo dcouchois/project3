@@ -31,7 +31,7 @@ function MyNavbar() {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
                 <NavLink to="/">Create</NavLink>
-                <NavLink to="/candle">Jams</NavLink>
+                <NavLink to="/candle">My Jams</NavLink>
                 <Nav.Link eventKey="/logout" onClick={logout}>Logout</Nav.Link>
               </Nav>
             </Navbar.Collapse>
