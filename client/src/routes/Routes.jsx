@@ -1,7 +1,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Fragment } from "react";
 import User from "../utils/Stores/User";
-import Candle from "../utils/Stores/Candle";
+import Beat from "../utils/Stores/Beat";
 import { Switch, Route } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner';
 import {
@@ -13,8 +13,7 @@ import {
     Login,
     Signup,
     Home,
-    CandleList,
-    CandleCreate
+    BeatList,
 } from "../pages";
 
 function Routes() {
@@ -29,16 +28,15 @@ function Routes() {
                     </Spinner>
                 </div>
             ) : (
-                <Candle.Provider>
+                <Beat.Provider>
                     <Switch>
                         <LoggedInRoute exact path="/" component={Home} />
-                        <LoggedInRoute exact path="/candle" component={CandleList} />
-                        <LoggedInRoute exact path="/candle/create" component={CandleCreate} />
+                        <LoggedInRoute exact path="/BeatList" component={BeatList} />
                         <LoggedOutRoute exact path="/login" component={Login} />
                         <LoggedOutRoute exact path="/signup" component={Signup} />
                         <Route path="*" component={NotFound} />
                     </Switch>
-                </Candle.Provider>
+                </Beat.Provider>
             )}
         </Fragment>
     );

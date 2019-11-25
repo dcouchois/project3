@@ -26,13 +26,12 @@ function MyNavbar() {
         )}
         {user.email && (
           <Fragment>
-            <NavbarBrand to="/">Candle App</NavbarBrand>
+            <NavbarBrand to="/">ICE COLD BEATS</NavbarBrand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
-                <NavLink to="/">Home</NavLink>
-                <NavLink to="/candle">Candle</NavLink>
-                <NavLink to="/candle/create">Create Candle</NavLink>
+                <NavLink to="/">Create</NavLink>
+                <NavLink to="/candle">Jams</NavLink>
                 <Nav.Link eventKey="/logout" onClick={logout}>Logout</Nav.Link>
               </Nav>
             </Navbar.Collapse>

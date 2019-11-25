@@ -59,27 +59,27 @@ router.get("/api/user_data", function (req, res) {
   }
 });
 
-router.get("/api/candles", isAuthenticatedData, function (req, res) {
+router.get("/api/beats", isAuthenticatedData, function (req, res) {
   db.User.findById(req.user._id)
     .then(function (dbUser) {
-      res.json(dbUser.candles);
+      res.json(dbUser.beats);
     })
     .catch(function (err) {
       res.status(500).json(err);
     });
 });
-router.post("/api/candles", isAuthenticatedData, function (req, res) {
-  const candle = new db.Candle({
+router.post("/api/beats", isAuthenticatedData, function (req, res) {
+  const beat = new db.Beats({
     name: req.body.name,
     scent: req.body.scent,
     height: req.body.height
   });
-  console.log(JSON.stringify(candle));
+  console.log(JSON.stringify(beat));
   db.User.update(
     { _id: req.user._id }, 
-    { $push: { candles: candle } })
+    { $push: { beats: beat } })
     .then(function () {
-      res.json(candle);
+      res.json(beat);
     })
     .catch(function (err) {
       res.status(500).json(err);
