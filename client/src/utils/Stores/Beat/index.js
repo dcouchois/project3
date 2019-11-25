@@ -1,6 +1,6 @@
-import actions from "./CandleActions.json";
-import API from "./BeatsAPI.js/index.js";
-import { Provider, useContext, refreshOnLoad } from "./BeatState.jsx/index.js";
+import actions from "./BeatActions.json";
+import API from "./BeatsAPI.js";
+import { Provider, useContext, refreshOnLoad } from "./BeatState.jsx";
 
 export default {
     actions,

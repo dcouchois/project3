@@ -1,9 +1,9 @@
-import CandleList from "./List";
+import BeatList from "./List";
 
 export default {
-    CandleList,
+    BeatList,
 }
 
 export {
-    CandleList,
+    BeatList,
 }

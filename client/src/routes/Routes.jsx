@@ -13,7 +13,7 @@ import {
     Login,
     Signup,
     Home,
-    Beat,
+    BeatList,
 } from "../pages";
 
 function Routes() {
@@ -31,7 +31,7 @@ function Routes() {
                 <Beat.Provider>
                     <Switch>
                         <LoggedInRoute exact path="/" component={Home} />
-                        <LoggedInRoute exact path="/candle" component={BeatList} />
+                        <LoggedInRoute exact path="/BeatList" component={BeatList} />
                         <LoggedOutRoute exact path="/login" component={Login} />
                         <LoggedOutRoute exact path="/signup" component={Signup} />
                         <Route path="*" component={NotFound} />

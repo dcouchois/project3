@@ -1,1 +1,1 @@
-export { default } from "./BeatList.jsx/index.js.js";
+export { default } from "./BeatList.jsx";

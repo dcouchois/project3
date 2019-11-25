@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Spinner from 'react-bootstrap/Spinner';
 import User from '../../../utils/Stores/User';
 import Beat from '../../../utils/Stores/Beat';
-import { BeatCard } from '../../../components';
+import { BeatCard } from '../../../components/Beat';
 
 export default function () {
     User.refreshOnLoad();

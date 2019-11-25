@@ -3,12 +3,12 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import User from '../../utils/Stores/User';
-import Candle from '../../utils/Stores/Candle';
+import Beat from '../../utils/Stores/Beat';
 
 export default function () {
     User.refreshOnLoad();
     // we eagerly load candles here so when the user switches pages it will appear faster. 
-    Candle.refreshOnLoad();
+    Beat.refreshOnLoad();
     const [{user}] = User.useContext();
 
     return (
@@ -21,7 +21,9 @@ export default function () {
                             {user.email}
                         </span>
                         <div>
-                            start editing
+                            <br>
+                            Drum Machine goes here...
+                            </br>
                         </div>
                     </h2>
                 </Col>
