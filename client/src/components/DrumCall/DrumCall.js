@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import DrumMachine from "./Drum";
+import DrumMachine from "../Drum/Drum";
+import "./style.css";
+
 
 const data = [
     { id: "conga", letter: "Q", src: "http://s1download-universal-soundbank.com/wav/13882.wav" },
@@ -14,18 +16,29 @@ const data = [
 ]
 
 export class DrumCall extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            display: '',
+        }
+    }
+
+    handleDisplay = display => this.setState({ display })
 
     render() {
         return (
-            <div id="drum-call">
-                <div id="display"></div>
-                {data.map(d => (
-                    <DrumMachine
-                        id={d.id}
-                        letter={d.letter}
-                        src={d.src}
-                    />
-                ))}
+            <div id="drum-machine">
+                <div id="display">{this.state.display}</div>
+                <div id="drum-roll">
+                    {data.map(d => (
+                        <DrumMachine
+                            id={d.id}
+                            letter={d.letter}
+                            src={d.src}
+                            handleDisplay={this.handleDisplay}
+                        />
+                    ))}
+                </div>
             </div>
         )
     }
