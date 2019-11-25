@@ -9,7 +9,7 @@ import { BeatCard } from '../../../components/Beat';
 
 export default function () {
     User.refreshOnLoad();
-    // every time the user hits the candle list page we will reload beats.
+    // every time the user hits the jams page we will reload beats.
     Beat.refreshOnLoad();
     const [{beats, pageLoading}] = Beat.useContext();
 

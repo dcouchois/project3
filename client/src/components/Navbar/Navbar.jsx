@@ -22,7 +22,7 @@ function MyNavbar() {
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
         {!user.email && (
-        <NavbarBrand to="/login">Candle App</NavbarBrand>
+        <NavbarBrand to="/login">ICE COLD BEATS</NavbarBrand>
         )}
         {user.email && (
           <Fragment>
