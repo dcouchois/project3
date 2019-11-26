@@ -1,6 +1,7 @@
 import React, { Component, useEffect } from "react";
 import "./style.css";
 
+// change this to a function and use hook
 export class DrumMachine extends Component {
 
     componentDidMount() {
@@ -9,7 +10,6 @@ export class DrumMachine extends Component {
 
     componentWillUnmount() {
         document.removeEventListener('keydown', this.handleKeydown)
-
     }
     
     handleKeydown = e => {
@@ -20,6 +20,7 @@ export class DrumMachine extends Component {
         }
     }
 
+    // change this to const handleclick
     handleClick = () => {
         this.audio.play()
         this.audio.currentTime = 0
