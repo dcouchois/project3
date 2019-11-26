@@ -17,18 +17,40 @@ function useKeyPress(keyInfo){
     
       useEffect(() => {
         window.addEventListener('keydown', downHandler);
-        // window.addEventListener('keyup', upHandler);
-        // Remove event listeners on cleanup
         return () => {
           window.removeEventListener('keydown', downHandler);
-        //   window.removeEventListener('keyup', upHandler);
         };
       }, []);
-      
-    
-   
+       
       return keyPressed;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 'use strict';
+
+    let buffer = [];
+    let lastKeyTime = Date.now();
+
+    document.addEventListener('keydown', event => {
+        const charList = 'qweasdzxc';
+        const key = event.key.toLowerCase();
+
+        // we are only interested in alphanumeric keys
+        if (charList.indexOf(key) === -1) return;
+
+        const currentTime = Date.now();
+
+        if (currentTime - lastKeyTime > 1000) {
+            buffer = [];
+        }
+
+        buffer.push(key);
+        lastKeyTime = currentTime;
+
+        console.log(buffer);
+    });
+});
+
 
 
 function DrumMachine (props) {
