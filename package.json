@@ -28,7 +28,10 @@
     "nodemon": "^1.18.7"
   },
   "dependencies": {
+    "bootstrap": "^4.4.0",
     "if-env": "^1.0.4",
-    "mongoose": "^5.7.12"
+    "mongoose": "^5.7.12",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-keydown": "^1.9.12"
   }
 }

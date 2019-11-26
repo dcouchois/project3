@@ -4,6 +4,10 @@ body {
   font-family: sans-serif;
 }
 
+.image{
+  width: 10%;
+}
+
 form.signup,
 form.login {
   margin-top: 50px;
