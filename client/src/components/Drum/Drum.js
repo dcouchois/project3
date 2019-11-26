@@ -15,12 +15,6 @@ function useKeyPress(keyInfo){
         }
       }
     
-    //   const upHandler = ({ key }) => {
-    //     if (key === keyInfo.letter) {
-    //       setKeyPressed(false);
-    //     }
-    //   };
-    
       useEffect(() => {
         window.addEventListener('keydown', downHandler);
         // window.addEventListener('keyup', upHandler);
@@ -32,20 +26,6 @@ function useKeyPress(keyInfo){
       }, []);
       
     
-    // const handleKeydown = event => {
-    //     if (e.keycode === this.props.letter.charCodeAt()) {
-    //         this.audio.play()
-    //         this.audio.currentTime = 0
-    //         this.props.handleDisplay(this.props.id)
-    //     }
-    // }  
-    
-    // useEffect(() => {
-    //     window.addEventListener("keydown", handleKeydown)
-    //     return () => {
-    //       window.removeEventListener("keydown", handleKeydown)
-    //     } 
-    //   }, [])
    
       return keyPressed;
 }
