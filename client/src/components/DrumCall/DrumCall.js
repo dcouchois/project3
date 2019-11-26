@@ -32,6 +32,7 @@ export class DrumCall extends Component {
                 <div id="drum-roll">
                     {data.map(d => (
                         <DrumMachine
+                        key={d.id}
                             id={d.id}
                             letter={d.letter}
                             src={d.src}

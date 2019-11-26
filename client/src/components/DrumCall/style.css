@@ -24,8 +24,3 @@
     font-style: bold;
     font-size: 30px;
 }
-
-@keyframes .drum-machine {
-    from {background-color: red;}
-    to {background-color: yellow;}
-  }
