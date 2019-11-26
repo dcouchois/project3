@@ -8,8 +8,19 @@
     margin-top: 5%;
 }
 
+.drum-animation {
+    animation: lightup 0.5s;
+}
+
+@keyframes lightup {
+    from{background-color: white}
+    to{background-color: slategray;}
+}
+
 .drum-machine {
     border: 1px solid black;
+    border-radius: 15px;
+    background-color: slategray;
     height: 15vh;
     width: 15vh;
     display: flex;
@@ -24,4 +35,3 @@
     font-style: bold;
     font-size: 30px;
 }
-
