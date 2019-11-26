@@ -9,15 +9,15 @@ import {
 
 class App extends Component {
   render() {
-  return (
-    <BrowserRouter>
-      <User.Provider>
-        <Navbar />
-        <Routes />
-      </User.Provider>
-    </BrowserRouter>
-  );
-}
+    return (
+      <BrowserRouter>
+        <User.Provider>
+          <Navbar />
+          <Routes />
+        </User.Provider>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
