@@ -24,8 +24,8 @@ export class DrumCall extends Component {
         }
     }
 
-    stopBtn(){
-        document.removeEventListener('keydown')
+    clearBtn(){
+        // document.removeEventListener('keydown')
     } 
 
     saveBtn(){
@@ -51,7 +51,7 @@ export class DrumCall extends Component {
                 </div>
                 <div id="display">{this.state.display}</div>
                 <button type="button" className="btn btn-info" onClick={this.saveBtn}>Save</button>
-                <button type="button" className="btn btn-danger" onClick={this.stopBtn}>Stop</button>
+                <button type="button" className="btn btn-danger" onClick={this.clearBtn}>Clear</button>
             </div>
 
         )

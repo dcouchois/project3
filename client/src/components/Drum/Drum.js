@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import "./style.css";
 
 
+
 function useKeyPress(keyInfo){
     const [keyPressed, setKeyPressed ] = useState (false)
     
@@ -49,6 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         console.log(buffer);
     });
+    // document.addEventListener("clearBtn", event => {
+    //     event.preventDefault()
+    //     buffer=[]
+    //     console.log("clearBtn");
+    // })
 });
 
 
