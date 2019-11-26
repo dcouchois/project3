@@ -42,7 +42,6 @@ body {
 }
 
 .pad {
-    border: 3px solid #ffffff;
     border-radius: 15px;
     background-image: url(../../images/photo.jpeg);
     box-shadow: 10px 10px 10px grey;

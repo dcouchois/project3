@@ -19,12 +19,12 @@ export default function () {
         <Container className="mt-5">
             <Row>
                 <Col md={{ span: 6, offset: 3 }}>
-                    <h2>
+                    <div className="member-name">
                         Welcome{" "}
-                        <span className="member-name">
+                        <span>
                             {user.email}
                         </span>
-                    </h2>
+                    </div>
                 </Col>
             </Row>
             <Jumbotron className="pad">

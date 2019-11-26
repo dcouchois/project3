@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import "./style.css";
 
 
+
 function useKeyPress(keyInfo){
     const [keyPressed, setKeyPressed ] = useState (false)
     
@@ -24,6 +25,28 @@ function useKeyPress(keyInfo){
       }, []);
       return [keyPressed, setKeyPressed];
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 'use strict';
+
+    let buffer = [];
+
+    document.addEventListener('keydown', event => {
+        const charList = 'qweasdzxc';
+        const key = event.key.toLowerCase();
+
+        // we are only interested in alphanumeric keys
+        if (charList.indexOf(key) === -1) return;
+        buffer.push(key);
+        console.log(buffer);
+    });
+    // document.addEventListener("clearBtn", event => {
+    //     event.preventDefault()
+    //     buffer=[]
+    //     console.log("clearBtn");
+    // })
+});
+
 
 
 function DrumMachine (props) {

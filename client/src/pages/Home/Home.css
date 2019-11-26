@@ -2,3 +2,14 @@
     width: 80%;
 }
 
+.member-name {
+    margin-left: 12%;
+    font-size: 25px;
+}
+
+.pad {
+    margin-top: 2%;
+    border-radius: 15px;
+    background-image: url(../../images/photo.jpeg);
+    box-shadow: 10px 10px 10px grey;
+}

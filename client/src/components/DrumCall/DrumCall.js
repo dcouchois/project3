@@ -16,6 +16,7 @@ const data = [
     { id: "Latin Drums", letter: "C", src: "http://dight310.byu.edu/media/audio/FreeLoops.com/5/5/Latin%20Percussions-5244-Free-Loops.com.mp3" },
 ]
 
+
 export class DrumCall extends Component {
     constructor(props) {
         super(props)
@@ -24,27 +25,36 @@ export class DrumCall extends Component {
         }
     }
 
+    clearBtn(){
+        // document.removeEventListener('keydown')
+    } 
+
+    saveBtn(){
+
+    }
+
     handleDisplay = display => this.setState({ display });
 
 
     render() {
         return (
-            <div>
-                <div id="drum-machine">
-                    <div id="drum-roll">
-                        {data.map(d => (
-                            <DrumMachine
-                                key={d.id}
-                                id={d.id}
-                                letter={d.letter}
-                                src={d.src}
-                                handleDisplay={this.handleDisplay}
-                            />
-                        ))}
-                    </div>
-                    <div id="display">{this.state.display}</div>
+            <div id="drum-machine">
+                <div id="drum-roll">
+                    {data.map(d => (
+                        <DrumMachine
+                            key={d.id}
+                            id={d.id}
+                            letter={d.letter}
+                            src={d.src}
+                            handleDisplay={this.handleDisplay}
+                        />
+                    ))}
                 </div>
+                <div id="display">{this.state.display}</div>
+                <button type="button" className="btn btn-info" onClick={this.saveBtn}>Save</button>
+                <button type="button" className="btn btn-danger" onClick={this.clearBtn}>Clear</button>
             </div>
+
         )
     }
 }

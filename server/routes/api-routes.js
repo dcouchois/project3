@@ -71,8 +71,8 @@ router.get("/api/beats", isAuthenticatedData, function (req, res) {
 router.post("/api/beats", isAuthenticatedData, function (req, res) {
   const beat = new db.Beats({
     name: req.body.name,
-    scent: req.body.scent,
-    height: req.body.height
+    beat: req.body.beat,
+    length: req.body.length
   });
   console.log(JSON.stringify(beat));
   db.User.update(
