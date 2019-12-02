@@ -35,9 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const charList = 'qweasdzxc';
         const key = event.key.toLowerCase();
 
-        // we are only interested in alphanumeric keys
         if (charList.indexOf(key) === -1) return;
+
         buffer.push(key);
+
         console.log(buffer);
     });
     // document.addEventListener("clearBtn", event => {

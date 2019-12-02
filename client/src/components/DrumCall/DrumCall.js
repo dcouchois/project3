@@ -25,11 +25,11 @@ export class DrumCall extends Component {
         }
     }
 
-    clearBtn(){
+    clearBtn() {
         // document.removeEventListener('keydown')
-    } 
+    }
 
-    saveBtn(){
+    saveBtn() {
 
     }
 
@@ -51,13 +51,22 @@ export class DrumCall extends Component {
                     ))}
                 </div>
                 <div id="display">{this.state.display}</div>
-                <button type="button" className="btn btn-info" onClick={this.saveBtn}>Save</button>
-                <button type="button" className="btn btn-danger" onClick={this.clearBtn}>Clear</button>
+                <form>
+                    <div className="form-group">
+                        {/* <label for="beatTitle">Title</label> */}
+                        <input type="text" className="form-control" id="beatTitle" placeholder="Ice Cold Beat Name" />
+                     </div>
+                     <div className="form-group">
+                        {/* <label for="beatSeq">Beat Sequence</label> */}
+                        <input type="text" className="form-control" id="beatSeq" placeholder="Ice Cold Beat Sequence" />
+                     </div>
+                        <button type="button" className="btn btn-info" onClick={this.saveBtn}>Save</button>
+                        <button type="button" className="btn btn-danger" onClick={this.clearBtn}>Clear</button>
+                </form>
             </div>
-
-        )
-    }
-}
-
-export default DrumCall;
-
+                )
+            }
+        }
+        
+        export default DrumCall;
+        
