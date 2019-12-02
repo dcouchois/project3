@@ -1,15 +1,26 @@
-.mt-5 {
-    width: 80%;
+.top-display {
+    width: 60%;
+    z-index: 15;
+    position: absolute;
+    top: 5%;
+    left: 20%;
 }
 
 .member-name {
-    margin-left: 12%;
     font-size: 25px;
 }
 
 .pad {
     margin-top: 2%;
     border-radius: 15px;
-    background-image: url(../../images/photo.jpeg);
-    box-shadow: 10px 10px 10px grey;
+    box-shadow: 10px 10px 10px #363636;
+    position: absolute;
+    bottom: -5%;
+    left: 11%;
+    z-index: 5;
+}
+
+.bg-image {
+    width: 100%;
+    position: relative;
 }

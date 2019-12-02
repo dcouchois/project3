@@ -3,13 +3,14 @@ import "./style.css";
 
 
 
-function useKeyPress(keyInfo){
+function useKeyPress(keyInfo, addLetter){
     const [keyPressed, setKeyPressed ] = useState (false)
     
     function downHandler({ key }) {
         console.log(key, keyInfo.letter);
         if (key === keyInfo.letter.toLowerCase()) {
             setKeyPressed(false);
+            addLetter(keyInfo.letter);
             setTimeout(() => setKeyPressed(true), 10);
           keyInfo.audio.current.play()
           keyInfo.audio.current.currentTime = 0
@@ -26,27 +27,27 @@ function useKeyPress(keyInfo){
       return [keyPressed, setKeyPressed];
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    // 'use strict';
+// document.addEventListener('DOMContentLoaded', () => {
+//     // 'use strict';
 
-    let buffer = [];
+//     let buffer = [];
 
-    document.addEventListener('keydown', event => {
-        const charList = 'qweasdzxc';
-        const key = event.key.toLowerCase();
+//     document.addEventListener('keydown', event => {
+//         const charList = 'qweasdzxc';
+//         const key = event.key.toLowerCase();
 
-        if (charList.indexOf(key) === -1) return;
+//         if (charList.indexOf(key) === -1) return;
 
-        buffer.push(key);
+//         buffer.push(key);
 
-        console.log(buffer);
-    });
-    // document.addEventListener("clearBtn", event => {
-    //     event.preventDefault()
-    //     buffer=[]
-    //     console.log("clearBtn");
-    // })
-});
+//         console.log(buffer);
+//     });
+//     // document.addEventListener("clearBtn", event => {
+//     //     event.preventDefault()
+//     //     buffer=[]
+//     //     console.log("clearBtn");
+//     // })
+// });
 
 
 
@@ -55,9 +56,10 @@ function DrumMachine (props) {
     const [keyPressed, setKeyPressed] = useKeyPress({
         ...props,
         audio: audioRef
-    })
+    }, props.addLetter)
     const handleClick = () => {
         setKeyPressed(false);
+        props.addLetter(props.letter);
         setTimeout(() => setKeyPressed(true), 10);
         audioRef.current.play()
         audioRef.current.currentTime = 0
