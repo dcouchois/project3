@@ -51,6 +51,7 @@ export class DrumCall extends Component {
                     ))}
                 </div>
                 <div id="display">{this.state.display}</div>
+                <br/>
                 <form>
                     <div className="form-group">
                         {/* <label for="beatTitle">Title</label> */}
