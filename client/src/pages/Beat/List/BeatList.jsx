@@ -1,4 +1,4 @@
-import React from "react";
+import React { useEffect } from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -6,12 +6,21 @@ import Spinner from 'react-bootstrap/Spinner';
 import User from '../../../utils/Stores/User';
 import Beat from '../../../utils/Stores/Beat';
 import { BeatCard } from '../../../components/Beat';
+import { useEffect } from "../../../../../../../../../Library/Caches/typescript/3.6/node_modules/@types/react";
 
 export default function () {
     User.refreshOnLoad();
     // every time the user hits the jams page we will reload beats.
     Beat.refreshOnLoad();
     const [{beats, pageLoading}] = Beat.useContext();
+
+    useEffect(() => {
+        loadBeats();
+    }, []);
+
+    async function loadBeats() {
+        
+    }
 
     return pageLoading ? (
             <div className="d-flex justify-content-center mt-5">

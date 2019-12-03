@@ -10,11 +10,9 @@ function useKeyPress(keyInfo, addLetter){
         console.log(key, keyInfo.letter);
         if (key === keyInfo.letter.toLowerCase()) {
             setKeyPressed(false);
-            addLetter(keyInfo.letter);
+            addLetter(keyInfo);
             setTimeout(() => setKeyPressed(true), 10);
-          keyInfo.audio.current.play()
-          keyInfo.audio.current.currentTime = 0
-          keyInfo.handleDisplay(keyInfo.id)
+          keyInfo.playSound()
         }
       }
     
@@ -23,7 +21,7 @@ function useKeyPress(keyInfo, addLetter){
         return () => {
           window.removeEventListener('keydown', downHandler);
         };
-      }, []);
+      }, [keyInfo]);
       return [keyPressed, setKeyPressed];
 }
 
@@ -52,18 +50,20 @@ function useKeyPress(keyInfo, addLetter){
 
 
 function DrumMachine (props) {
-    const audioRef = useRef();
     const [keyPressed, setKeyPressed] = useKeyPress({
         ...props,
-        audio: audioRef
+        audio: props.audioRef,
+        playSound: props.playSound
     }, props.addLetter)
     const handleClick = () => {
         setKeyPressed(false);
-        props.addLetter(props.letter);
+        props.addLetter({
+            ...props,
+            audio: props.audioRef,
+            playSound: props.playSound
+        });
         setTimeout(() => setKeyPressed(true), 10);
-        audioRef.current.play()
-        audioRef.current.currentTime = 0
-        props.handleDisplay(props.id)
+        props.playSound()
     }
 
         return (
@@ -73,7 +73,7 @@ function DrumMachine (props) {
             >
                 <h4>{props.letter}</h4>
                 <audio
-                    ref={audioRef}
+                    ref={props.audioRef}
                     className="clip"
                     src={props.src}
                     id={props.letter}>
