@@ -7,6 +7,7 @@ import Beat from '../../utils/Stores/Beat';
 import DrumCall from "../../components/DrumCall/DrumCall";
 import "./Home.css";
 import Jumbotron from 'react-bootstrap/Jumbotron';
+import logo from "../../images/photo.jpeg";
 
 export default function () {
     User.refreshOnLoad();
@@ -16,21 +17,22 @@ export default function () {
 
     return (
         <Fragment>
-        <Container className="mt-5">
-            <Row>
-                <Col md={{ span: 6, offset: 3 }}>
-                    <h2>
-                        Welcome{" "}
-                        <span className="member-name">
-                            {user.email}
-                        </span>
-                    </h2>
-                </Col>
-            </Row>
+            <img className="bg-image" src={logo} alt={logo} />
+            <Container className="mt-5 top-display">
+                <Row>
+                    <Col sm={{ span: 9, offset: 3 }}>
+                        <div className="member-name">
+                            Welcome{" "}
+                            <span>
+                                {user.email}
+                            </span>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
             <Jumbotron className="pad">
-            <DrumCall />
+                <DrumCall />
             </Jumbotron>
-        </Container>
         </Fragment>
     );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -12,6 +12,14 @@ export default function () {
     // every time the user hits the jams page we will reload beats.
     Beat.refreshOnLoad();
     const [{beats, pageLoading}] = Beat.useContext();
+
+    useEffect(() => {
+        loadBeats();
+    }, []);
+
+    async function loadBeats() {
+        
+    }
 
     return pageLoading ? (
             <div className="d-flex justify-content-center mt-5">
