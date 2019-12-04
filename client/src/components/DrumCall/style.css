@@ -1,0 +1,43 @@
+body {
+    background-color: lightsteelblue;
+}
+
+#drum-roll {
+    color: white;
+    height: 35vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex;
+    align-items: center;
+    margin-left: 2%;
+    margin-top: 5%;
+}
+
+.drum-animation {
+    animation: lightup 0.5s;
+}
+
+@keyframes lightup {
+    from{background-color: white}
+    to{background-color: slategray;}
+}
+
+.drum-machine {
+    border-radius: 15px;
+    background-color: slategray;
+    height: 15vh;
+    width: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1vw;
+}
+
+#display {
+    color: black;
+    margin-right: 7%;
+    text-align: center;
+    font-style: bold;
+    font-size: 30px;
+}
+
