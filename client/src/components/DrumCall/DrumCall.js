@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import DrumMachine from "../Drum/Drum";
 import "./style.css";
+import API from "../../utils/Stores/Beat/BeatsAPI";
 
 
 
@@ -45,6 +46,13 @@ export function DrumCall(props) {
         }
     });
     const [lettersPressed, setLettersPressed] = useState([]);
+    const [beat, setBeats] = useState({
+        beat: "",
+        length: []
+    });
+
+    const [name, setName] = useState();
+    const [length, setLength] = useState();
 
     const playSound = keyInfo => {
         keyInfo.audioRef.current.play()
@@ -84,7 +92,7 @@ export function DrumCall(props) {
             scheduledEvents.push(
                 setTimeout(() => {
                     keyInfo.playSound();
-                }, index * 500),
+                }, index * 300),
             );
         });
     };
@@ -99,12 +107,22 @@ export function DrumCall(props) {
         });
     };
 
+
     const clearBtn = () => {
-        // document.removeEventListener('keydown')
+        
     }
 
     const saveBtn = () => {
+        createBeats();
+    }
 
+    // useEffect(() => {
+    //     createBeats();
+    // })
+
+    async function createBeats() {
+        const beat = await API.createBeats();
+        setBeats(beat);
     }
 
     const handleDisplay = display => setDrumState({ ...drum, display });
