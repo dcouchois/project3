@@ -1,0 +1,26 @@
+.top-display {
+    width: 60%;
+    z-index: 15;
+    position: absolute;
+    top: 5%;
+    left: 20%;
+}
+
+.member-name {
+    font-size: 25px;
+}
+
+.pad {
+    margin-top: 2%;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px #363636;
+    position: absolute;
+    bottom: -5%;
+    left: 11%;
+    z-index: 5;
+}
+
+.bg-image {
+    width: 100%;
+    position: relative;
+}

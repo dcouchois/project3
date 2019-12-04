@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.image{
+  width: 10%;
+}
+
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+.hidden {
+  display: none
+}
