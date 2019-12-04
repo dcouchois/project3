@@ -8,9 +8,5 @@ export default {
   // Creates a beat in the database
   createBeats: function(beatData) {
     return axios.post("/api/beats", beatData).then(({data}) => data);
-  },
-  saveBeats: function() {
-    return axios.post("/api/beats").then(({data}) => data);
-  },
-
+  }
 }; 
